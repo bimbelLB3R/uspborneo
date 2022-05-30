@@ -6,9 +6,9 @@ import Circle from './Circle';
 const Dokumentation = () => {
   return (
     <div className="">
-      <div>
-        <p className=" border-b-4 inline-block border-green-400 font-bold text-3xl mb-10 ml-4 md:ml-20 mt-10 md:mt-20 ">
-          TESTIMONIAL
+      <div className="flex items-center justify-center">
+        <p className=" border-b-4  border-green-400 font-bold text-3xl mb-10 ml-4 md:ml-20 mt-10 md:mt-20 ">
+          Testimonial
         </p>
       </div>
       <div className="block md:flex mb-10 ml-4 md:ml-20">

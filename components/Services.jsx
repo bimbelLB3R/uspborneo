@@ -34,13 +34,13 @@ const Services = ({ products, kategori }) => {
   return (
     <div>
       <div className="">
-        <p className=" border-b-4 inline-block border-green-400 font-bold text-3xl mb-10 ml-4 md:ml-20 mt-10 ">
-          Our Products
-        </p>
+        <div className="  font-bold text-3xl mb-10 ml-4 md:ml-20 mt-10 flex items-center justify-center">
+          <p className="border-b-4  border-green-400">Our Products</p>
+        </div>
         <div className="flex items-center justify-center">
           <ToggleButtonGroup
             exclusive
-            color="primary"
+            color="success"
             value={alignment}
             onChange={handleCategoryChange}>
             <ToggleButton value="">All</ToggleButton>
