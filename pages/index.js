@@ -2,12 +2,12 @@ import Head from 'next/head';
 
 import Intro from '../components/Intro';
 import Services from '../components/Services';
-import { data } from '../data';
+// import { data } from '../data';
 import Dokumentation from '../components/Dokumentation';
 
 import { client } from '../lib/client';
 
-export default function Home({ products }) {
+export default function Home({ products, kategori }) {
   return (
     <div className="">
       <Head>
@@ -31,7 +31,7 @@ export default function Home({ products }) {
         <link rel="icon" href="/usp-logo.png" />
       </Head>
       <Intro />
-      <Services products={products} />
+      <Services products={products} kategori={kategori} />
       <Dokumentation />
     </div>
   );
@@ -43,7 +43,10 @@ export const getServerSideProps = async () => {
   const query = '*[_type == "product"]';
   const products = await client.fetch(query);
 
+  const kategoriQuery = '*[_type == "kategori"]';
+  const kategori = await client.fetch(kategoriQuery);
+
   return {
-    props: { products },
+    props: { products, kategori },
   };
 };

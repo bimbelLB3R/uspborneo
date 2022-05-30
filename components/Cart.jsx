@@ -80,7 +80,7 @@ const Cart = () => {
           <div>
             {cartItems.length >= 1 &&
               cartItems.map((item) => (
-                <div className="w-full  flex mb-4">
+                <div className="w-full  flex mb-4 shadow hover:shadow-lg ">
                   <div className="w-[150px] p-2">
                     <img src={urlFor(item?.image[0])} className="object-fit" />
                   </div>

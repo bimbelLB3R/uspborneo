@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 import { urlFor } from '../lib/client';
 
-const CardServices = ({ product: { image, name, slug, price } }) => {
+const CardServices = ({ product: { image, name, slug, price, kategori } }) => {
   return (
     <div>
       <div className="p-4 ">
         <Link href={`/products/${slug.current}`} className="">
-          <div className=" hover:cursor-pointer hover:scale-105 duration-300 ease-in hover:drop-shadow-lg">
+          <div className=" hover:cursor-pointer hover:scale-105 duration-300 ease-in shadow-lg p-4">
             <div className="flex items-center justify-center  w-[300px] h-[300px] p-4 ">
               <img
                 src={urlFor(image && image[0])}
@@ -19,6 +19,7 @@ const CardServices = ({ product: { image, name, slug, price } }) => {
             </div>
             <p className="text-center font-semibold">{name}</p>
             <p className="text-center">Rp {price}</p>
+            <p className="text-center"> {kategori}</p>
           </div>
         </Link>
       </div>

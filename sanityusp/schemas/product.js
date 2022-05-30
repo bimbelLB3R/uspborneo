@@ -18,6 +18,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'kategori',
+      title: 'Kategori',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
