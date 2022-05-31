@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { HeroBanner } from '../components';
+import { FooterBanner } from '../components';
 
 // import Intro from '../components/Intro';
 import Services from '../components/Services';
@@ -30,6 +32,7 @@ export default function Home({ products, kategori }) {
         />
         <link rel="icon" href="/usp-logo.png" />
       </Head>
+      <HeroBanner products={products.length && products[0]} />
       {/* <Intro /> */}
       <Services products={products} kategori={kategori} />
       {/* <Dokumentation /> */}
