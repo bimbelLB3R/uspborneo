@@ -61,7 +61,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <h4 className="font-bold text-xl">Details: </h4>
           <p className="text-sm">{details}</p>
-          <p className=" font-bold text-2xl text-red-500">${price}</p>
+          <p className=" font-bold text-2xl text-red-500">Rp {price}</p>
           <div className=" flex space-x-4 items-center">
             <h3 className="font-bold text-xl">Quantity:</h3>
             <p className=" flex space-x-4 items-center ">
