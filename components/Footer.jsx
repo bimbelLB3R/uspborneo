@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <div className="flex justify-between">
           <ul className="lg:flex lg:space-x-4">
-            <li>Tentang Kami</li>
+            <Link href="/about">Tentang Kami</Link>
             <li>Kerjasama</li>
             <li>Lowongan Kerja</li>
             <li>Berita Terkini</li>
