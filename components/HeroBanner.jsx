@@ -12,7 +12,7 @@ const HeroBanner = ({ products }) => {
         <h1>10%</h1>
         <div className="">
           <img
-            src={urlFor(products.image[0])}
+            src={urlFor(products.image[1])}
             alt="headphones"
             className="hero-banner-image "
           />

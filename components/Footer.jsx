@@ -4,15 +4,25 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Link from 'next/dist/client/link';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
     <div className="w-full bg-gray-100 py-16">
       <div className="max-w-[1240] mx-auto flex flex-col px-4">
         <div className="sm:flex text-center justify-between items-center">
-          <h1 className="text-fuchsia-400 text-3xl font-extrabold">
-            USP Store
-          </h1>
+          <Link href="/">
+            <div className="text-fuchsia-400 text-3xl font-extrabold flex items-center justify-center">
+              <Image
+                src="/usp-logo.png"
+                alt=""
+                width="45"
+                height="45"
+                className=""
+              />
+              <p>USP Store</p>
+            </div>
+          </Link>
           <div className="flex justify-between w-full sm:max-w-[280px] my-4 icon">
             <Link href="https://wa.me/+6281392552459">
               <WhatsAppIcon

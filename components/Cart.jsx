@@ -12,8 +12,9 @@ import toast from 'react-hot-toast';
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
-const today = new Date();
+// const today = new Date();
 // import MyOrder from './MyOrder';
+// import NumberFormat from './NumberFormat';
 
 const Cart = () => {
   const cartRef = useRef();
@@ -127,7 +128,7 @@ const Cart = () => {
           <div className=" bg-gray-100 p-6">
             <div className="flex px-10 items-center justify-between font-bold">
               <h3>Subtotal:</h3>
-              <h3>${totalPrice}</h3>
+              <h3>Rp {totalPrice}</h3>
             </div>
             <div className="flex justify-center px-10 mb-10">
               <div className="bg-red-500 rounded-full px-4 py-2 text-gray-50">

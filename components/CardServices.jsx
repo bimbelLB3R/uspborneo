@@ -19,7 +19,7 @@ const CardServices = ({ product: { image, name, slug, price, kategori } }) => {
             </div>
             <p className="text-center font-semibold">{name}</p>
             <p className="text-center">Rp {price}</p>
-            <p className="text-center"> {kategori}</p>
+            <p className="text-center italic text-xs"> #{kategori}</p>
           </div>
         </Link>
       </div>
