@@ -40,7 +40,7 @@ const Navbar = () => {
             {showCart && <Cart />}
           </div>
         </div>
-        <SearchBar />
+        {/* <SearchBar /> */}
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import {
   AiOutlineStar,
 } from 'react-icons/ai';
 import { useStateContext } from '../../context/StateContext';
+import SearchBar from '../../components/SearchBar';
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
@@ -21,6 +22,7 @@ const ProductDetails = ({ product, products }) => {
   };
   return (
     <div>
+      <SearchBar products={products} />
       <div className=" md:flex text-gray-900 md:p-10 lg:p-20">
         <div className="md:w-1/2 lg:w-2/5 flex items-center justify-center p-5 md:p-0 relative">
           {/* <div className="absolute top-6 right-6  bg-red-500 p-2 text-gray-50 rounded-tr-xl rounded-br-xl text-xl font-bold italic ">

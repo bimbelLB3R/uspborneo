@@ -3,7 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import { client } from '../lib/client';
 
-const SearchBar = ({ products = [{ name: 'angsa' }], placeholder }) => {
+const SearchBar = ({ products, kategori, placeholder }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState('');
   const handleFiltered = (e) => {
@@ -24,13 +24,13 @@ const SearchBar = ({ products = [{ name: 'angsa' }], placeholder }) => {
   };
   return (
     <div>
-      <div className="search absolute md:top-6 md:left-1/3 z-50">
+      <div className="search absolute top-[90px] md:top-6 left-4 md:left-[250px] z-50">
         <div className="searchInputs flex justify-between items-center max-w-[700px] md:max-w-[350px] mx-auto w-full border rounded-md text-gray-800 bg-gray-100/90 ">
           <input
             type="text"
             value={wordEntered}
             placeholder={placeholder}
-            className="bg-transparent focus:outline-none w-[250px] sm:w-[400px] font-[Poppins] "
+            className="bg-transparent focus:outline-none w-[250px] sm:w-[400px] font-[Poppins] pl-2"
             onChange={handleFiltered}
           />
           <div className="searchIcon bg-fuchsia-400 p-1 md:p-2 rounded-lg">
@@ -47,10 +47,13 @@ const SearchBar = ({ products = [{ name: 'angsa' }], placeholder }) => {
         </div>
         {filteredData.length !== 0 && (
           <div className="dataResult  h-20 overflow-auto ">
-            {filteredData.map((value, key) => {
+            {filteredData.map((value, index) => {
               return (
-                <div className="">
-                  <a href={value.url} target="_blank" rel="noreferrer">
+                <div key={index}>
+                  <a
+                    href={`/products/${value.slug.current}`}
+                    target="_parent"
+                    rel="noreferrer">
                     <div className="bg-white text-gray-800 max-w-[700px] mx-auto w-full flex justify-center relative">
                       <p className="bg-gray-100 hover:bg-gray-300 p-1 w-full absolute">
                         {value.name}
@@ -68,17 +71,3 @@ const SearchBar = ({ products = [{ name: 'angsa' }], placeholder }) => {
 };
 
 export default SearchBar;
-
-// fetching data product from sanity
-
-export const getServerSideProps = async () => {
-  const query = '*[_type == "product"]';
-  const products = await client.fetch(query);
-
-  const kategoriQuery = '*[_type == "kategori"]';
-  const kategoris = await client.fetch(kategoriQuery);
-
-  return {
-    props: { products, kategoris },
-  };
-};

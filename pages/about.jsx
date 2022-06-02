@@ -4,8 +4,21 @@ import Circle from '../components/Circle';
 import Link from 'next/link';
 import Carousel from '../components/Carousel';
 import RoomIcon from '@mui/icons-material/Room';
+import { client } from '../lib/client';
 
-const about = () => {
+export const getStaticProps = async () => {
+  const query = '*[_type == "product"]';
+  const products = await client.fetch(query);
+
+  const kategoriQuery = '*[_type == "kategori"]';
+  const kategori = await client.fetch(kategoriQuery);
+
+  return {
+    props: { products, kategori },
+  };
+};
+
+const about = ({ products }) => {
   return (
     <div>
       <Head>
@@ -23,6 +36,9 @@ const about = () => {
                   <span className="text-fuchsia-400">USP</span> UWAIS
                 </p>
                 <p>SCREEN PRINTING</p>
+                {products.map((item) => {
+                  return <div>{item.name}</div>;
+                })}
               </div>
               <div>
                 <p className="text-justify">

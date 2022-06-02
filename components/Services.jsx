@@ -44,8 +44,8 @@ const Services = ({ products, kategori }) => {
             value={alignment}
             onChange={handleCategoryChange}>
             <ToggleButton value="">All</ToggleButton>
-            {kategori?.map((itemKategori) => (
-              <ToggleButton value={itemKategori.kategori}>
+            {kategori?.map((itemKategori, index) => (
+              <ToggleButton value={itemKategori.kategori} key={index}>
                 {itemKategori.kategori}
               </ToggleButton>
             ))}
