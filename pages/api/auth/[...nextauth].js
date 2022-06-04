@@ -59,9 +59,14 @@ export default NextAuth({
     colorScheme: 'light',
   },
   callbacks: {
-    async jwt({ token }) {
-      token.userRole = 'admin';
-      return token;
+    async session({ session, token, user }) {
+      session.user.username = session.user.name
+        .split(' ')
+        .join('')
+        .toLowerCase();
+
+      session.user.uid = token.sub;
+      return session;
     },
   },
 });
