@@ -6,9 +6,13 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
 import SearchBar from './SearchBar';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
+  // data adalah data user yg login dngn google akun
+  const { data: session } = useSession();
+  // console.log(session);
 
   return (
     <div>
@@ -25,10 +29,25 @@ const Navbar = () => {
             </div>
           </Link>
           <div className="flex space-x-3 items-center">
-            <div className="flex  items-center text-gray-400">
-              <p className="text-[14px]">Login</p>
-              <PersonOutlineIcon className="text-3xl" />
-            </div>
+            {!session ? (
+              <button onClick={signIn}>
+                <div className="flex  items-center text-gray-400 hover:cursor-pointer">
+                  <p className="text-xs">Masuk</p>
+                  <PersonOutlineIcon className="text-3xl" />
+                </div>
+              </button>
+            ) : (
+              <div className="flex items-center text-xs">
+                {session?.user?.name}
+                <img
+                  onClick={signOut}
+                  src={session.user.image}
+                  alt="user"
+                  className="rounded-full w-5 h-5 ml-1 bg-none hover:cursor-pointer"
+                />
+              </div>
+            )}
+
             <button
               type="button"
               className="cart-icon"
