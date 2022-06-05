@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Footer, HeroBanner, Navbar } from '../components';
 import { FooterBanner } from '../components';
 import SearchBar from '../components/SearchBar';
+import { app, db } from '../firebase';
 
 // import Intro from '../components/Intro';
 import Services from '../components/Services';

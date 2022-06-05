@@ -24,7 +24,7 @@ const SearchBar = ({ products, kategori, placeholder }) => {
   };
   return (
     <div>
-      <div className="search absolute top-[90px] md:top-6 left-4 md:left-[250px] z-50">
+      <div className="search absolute top-[90px] md:top-6 left-4 md:left-[250px] z-40">
         <div className="searchInputs flex justify-between items-center max-w-[700px] md:max-w-[350px] mx-auto w-full border rounded-md text-gray-800 bg-gray-100/90 ">
           <input
             type="text"

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import LoginForm from './LoginForm';
 
 import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
@@ -13,6 +16,11 @@ const Navbar = () => {
   // data adalah data user yg login dngn google akun
   const { data: session } = useSession();
   // console.log(session);
+  const [nav, setNav] = useState(false);
+
+  const handleNav = () => {
+    setNav(!nav);
+  };
 
   return (
     <div>
@@ -28,14 +36,37 @@ const Navbar = () => {
               </p>
             </div>
           </Link>
-          <div className="flex space-x-3 items-center">
+          <div className="flex space-x-1 items-center">
             {!session ? (
-              <button onClick={signIn}>
-                <div className="flex  items-center text-gray-400 hover:cursor-pointer">
-                  <p className="text-xs">Masuk</p>
-                  <PersonOutlineIcon className="text-3xl" />
+              <>
+                {/* <button onClick={signIn}>
+                  <div className="flex  items-center text-gray-400 hover:cursor-pointer">
+                    <p className="text-xs">Masuk</p>
+                    <PersonOutlineIcon className="text-3xl" />
+                  </div>
+                </button> */}
+
+                <div
+                  onClick={handleNav}
+                  className="flex items-center cursor-pointer">
+                  <p>Login</p>
+                  {nav ? (
+                    <>
+                      <ArrowDropDownIcon className="text-3xl" />
+                    </>
+                  ) : (
+                    <ArrowRightIcon className="text-3xl" />
+                  )}
                 </div>
-              </button>
+                <div
+                  className={
+                    nav
+                      ? 'visible absolute top-[135px] md:top-[110px] left-0 right-0 bg-gray-100 p-2  h-[800px]  z-50'
+                      : 'hidden'
+                  }>
+                  <LoginForm />
+                </div>
+              </>
             ) : (
               <div className="flex items-center text-xs">
                 {session?.user?.name}
