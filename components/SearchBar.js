@@ -55,7 +55,7 @@ const SearchBar = ({ products, kategori, placeholder }) => {
                     target="_parent"
                     rel="noreferrer">
                     <div className="bg-white text-gray-800 max-w-[700px] mx-auto w-full flex justify-center relative">
-                      <p className="bg-gray-100 hover:bg-gray-300 p-1 w-full absolute">
+                      <p className="bg-gray-100 hover:bg-gray-300 p-1 w-full absolute z-50">
                         {value.name}
                       </p>
                     </div>

@@ -39,14 +39,14 @@ const Navbar = () => {
           <div className="flex space-x-1 items-center">
             {!session ? (
               <>
-                {/* <button onClick={signIn}>
+                <button onClick={signIn}>
                   <div className="flex  items-center text-gray-400 hover:cursor-pointer">
                     <p className="text-xs">Masuk</p>
                     <PersonOutlineIcon className="text-3xl" />
                   </div>
-                </button> */}
+                </button>
 
-                <div
+                {/* <div
                   onClick={handleNav}
                   className="flex items-center cursor-pointer">
                   <p>Login</p>
@@ -61,11 +61,11 @@ const Navbar = () => {
                 <div
                   className={
                     nav
-                      ? 'visible absolute top-[135px] md:top-[110px] left-0 right-0 bg-gray-100 p-2  h-[800px]  z-50'
+                      ? 'visible absolute top-[135px] md:top-[110px] left-0 right-0 bg-gray-100 p-2  h-[800px]  z-40 shadow-2xl'
                       : 'hidden'
                   }>
                   <LoginForm />
-                </div>
+                </div> */}
               </>
             ) : (
               <div className="flex items-center text-xs">
