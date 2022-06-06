@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 import { urlFor } from '../lib/client';
 
 const HeroBanner = ({ products }) => {
+  const { data: session } = useSession();
   return (
     <div className="hero-banner-container">
       <div>
@@ -19,9 +21,18 @@ const HeroBanner = ({ products }) => {
         </div>
 
         <div>
-          <Link href="/products/qurban">
-            <button type="button">Ambil Promo</button>
-          </Link>
+          {session ? (
+            <Link href="/products/qurban">
+              <button type="button">Ambil Promo</button>
+            </Link>
+          ) : (
+            <div>
+              <button type="button" onClick={signIn}>
+                Ambil Promo
+              </button>
+            </div>
+          )}
+
           <div className="desc">
             <h5>Description</h5>
             <p>Pembelian selama bulan Dzulkoidah 1443 H mendapat diskon 10%</p>

@@ -8,7 +8,7 @@ function signIn({ providers }) {
   return (
     <>
       {/* login form */}
-      <div className="h-screen">
+      <div className="h-screen mb-[400px]">
         <div className="px-6 h-full text-gray-800">
           <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
             <div className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0">
@@ -27,7 +27,9 @@ function signIn({ providers }) {
                       <div key={provider.name}>
                         <button
                           onClick={() =>
-                            SignIntoProvider(provider.id, { callbackUrl: '/' })
+                            SignIntoProvider(provider.id, {
+                              callbackUrl: '/welcome',
+                            })
                           }
                           className="bg-blue-500 rounded-lg text-white p-3">
                           <div className="flex items-center">

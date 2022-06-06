@@ -15,7 +15,7 @@ const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   // data adalah data user yg login dngn google akun
   const { data: session } = useSession();
-  // console.log(session);
+  console.log(session);
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {
@@ -72,7 +72,7 @@ const Navbar = () => {
                 {session?.user?.name}
                 <img
                   onClick={signOut}
-                  src={session.user.image}
+                  src={session?.user?.image}
                   alt="user"
                   className="rounded-full w-5 h-5 ml-1 bg-none hover:cursor-pointer"
                 />
