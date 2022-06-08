@@ -15,7 +15,7 @@ const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   // data adalah data user yg login dngn google akun
   const { data: session } = useSession();
-  console.log(session);
+  // console.log(session);
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {

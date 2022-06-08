@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Footer, HeroBanner, Navbar } from '../components';
+import { Footer, HeroBanner, Layout, Navbar } from '../components';
 import { FooterBanner } from '../components';
 import SearchBar from '../components/SearchBar';
 import { app, db } from '../firebase';
@@ -16,13 +16,13 @@ export default function Home({ products, kategori }) {
     <div className="">
       <Head>
         {/* {console.log(products)} */}
-        <title>USP-STORE</title>
+        <title>USP Store</title>
         <meta
           name="description"
           content="Jual Kaos Polos dan sablonnya. Wilayah Tabalong dan sekitarnya."
         />
-        <meta property="og:title" content="Hayuk Kak diorder" />
-        <meta property="og:url" content="https://usp-store.vercel.app" />
+        <meta property="og:title" content="USP Store" />
+        <meta property="og:url" content="https://uspborneo.vercel.app" />
         <meta
           property="og:description"
           content="Jual Kaos Polos dan sablonnya. Wilayah Tabalong dan sekitarnya."
@@ -34,7 +34,7 @@ export default function Home({ products, kategori }) {
         />
         <link rel="icon" href="/usp-logo.png" />
       </Head>
-
+      <Navbar />
       <SearchBar
         products={products}
         kategori={kategori}
@@ -44,6 +44,7 @@ export default function Home({ products, kategori }) {
       {/* <Intro /> */}
       <Services products={products} kategori={kategori} />
       {/* <Dokumentation /> */}
+      <Footer />
     </div>
   );
 }

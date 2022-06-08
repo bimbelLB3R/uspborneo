@@ -2,13 +2,14 @@ import React from 'react';
 import { getProviders, signIn as SignIntoProvider } from 'next-auth/react';
 import GoogleIcon from '@mui/icons-material/Google';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function signIn({ providers }) {
   // console.log(providers);
   return (
     <>
       {/* login form */}
-      <div className="h-screen mb-[400px]">
+      <div className="h-screen">
         <div className="px-6 h-full text-gray-800">
           <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
             <div className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0">
@@ -77,7 +78,7 @@ function signIn({ providers }) {
                       Remember me
                     </label>
                   </div>
-                  <a href="#!" className="text-gray-800">
+                  <a href="" className="text-gray-800">
                     Forgot password?
                   </a>
                 </div>
@@ -90,11 +91,11 @@ function signIn({ providers }) {
                   </button>
                   <p className="text-sm font-semibold mt-2 pt-1 mb-0">
                     Don't have an account?
-                    <a
-                      href="#!"
-                      className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out">
-                      Register
-                    </a>
+                    <Link href="/register">
+                      <span className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out cursor-pointer">
+                        Register
+                      </span>
+                    </Link>
                   </p>
                 </div>
               </div>

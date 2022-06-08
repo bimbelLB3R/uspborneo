@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
+import cookie from 'js-cookie';
 
 const Context = createContext();
 
@@ -22,6 +23,7 @@ export const StateContext = ({ children }) => {
     setTotalPrice(
       (prevTotalPrice) => prevTotalPrice + product.price * quantity
     );
+
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
 
     if (checkProductInCart) {

@@ -15,6 +15,7 @@ import getStripe from '../lib/getStripe';
 // const today = new Date();
 // import MyOrder from './MyOrder';
 // import NumberFormat from './NumberFormat';
+import Cookie from 'js-cookie';
 
 const Cart = () => {
   const cartRef = useRef();

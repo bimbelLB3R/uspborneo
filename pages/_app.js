@@ -9,10 +9,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
       <StateContext>
-        <Layout>
-          <Toaster />
-          <Component {...pageProps} />
-        </Layout>
+        {/* <Layout> */}
+        <Toaster />
+        <Component {...pageProps} />
+        {/* </Layout> */}
       </StateContext>
     </SessionProvider>
   );

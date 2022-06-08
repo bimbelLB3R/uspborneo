@@ -9,6 +9,9 @@ import {
 } from 'react-icons/ai';
 import { useStateContext } from '../../context/StateContext';
 import SearchBar from '../../components/SearchBar';
+import Head from 'next/head';
+import { cookie } from '@mui/icons-material';
+import { Footer, Navbar } from '../../components';
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
@@ -22,6 +25,10 @@ const ProductDetails = ({ product, products }) => {
   };
   return (
     <div>
+      <Head>
+        <title>{name}-USP-Store</title>
+      </Head>
+      <Navbar />
       <SearchBar products={products} />
       <div className=" md:flex text-gray-900 md:p-10 lg:p-20">
         <div className="md:w-1/2 lg:w-2/5 flex items-center justify-center p-5 md:p-0 relative">
@@ -106,6 +113,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
