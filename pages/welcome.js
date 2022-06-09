@@ -5,6 +5,7 @@ import { BsBagCheckFill } from 'react-icons/bs';
 import { useStateContext } from '../context/StateContext';
 import { runFireworks } from '../lib/utils';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 const welcome = () => {
   const {
@@ -23,6 +24,10 @@ const welcome = () => {
     setTotalQuantities(totalQuantities);
     runFireworks();
   }, []);
+  // const router = useRouter();
+  // const backPrevios = () => {
+  //   router.back();
+  // };
 
   return (
     <div className="success-wrapper">

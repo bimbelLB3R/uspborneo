@@ -34,13 +34,16 @@ export default function Home({ products, kategori }) {
         />
         <link rel="icon" href="/usp-logo.png" />
       </Head>
+
       <Navbar />
       <SearchBar
         products={products}
         kategori={kategori}
         placeholder="cari nama produk"
       />
-      <HeroBanner products={products.length && products[0]} />
+
+      <HeroBanner products={products} />
+
       {/* <Intro /> */}
       <Services products={products} kategori={kategori} />
       {/* <Dokumentation /> */}

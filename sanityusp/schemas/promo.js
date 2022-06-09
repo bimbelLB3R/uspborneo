@@ -1,6 +1,6 @@
 export default {
-  name: 'product',
-  title: 'Product',
+  name: 'promo',
+  title: 'Promo',
   type: 'document',
   fields: [
     {
@@ -54,7 +54,7 @@ export default {
     {
       name: 'diskon',
       title: 'Diskon',
-      type: 'number',
+      type: 'string',
     },
   ],
 };

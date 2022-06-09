@@ -6,3 +6,6 @@ export { default as Cart } from './Cart';
 export { default as HeroBanner } from './HeroBanner';
 export { default as SearchBar } from './SearchBar';
 export { default as LoginForm } from './LoginForm';
+export { default as BackBar } from './BackBar';
+export { default as PromoCard } from './PromoCard';
+export { default as Keranjang } from './Keranjang';

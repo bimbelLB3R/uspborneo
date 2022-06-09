@@ -3,9 +3,19 @@ import { getProviders, signIn as SignIntoProvider } from 'next-auth/react';
 import GoogleIcon from '@mui/icons-material/Google';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 function signIn({ providers }) {
   // console.log(providers);
+  const { data: session } = useSession();
+  const router = useRouter();
+  if (session) {
+    router.back();
+  }
+  const backTo = () => {
+    router.push(router.query.from);
+  };
   return (
     <>
       {/* login form */}

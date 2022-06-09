@@ -11,10 +11,10 @@ import { useStateContext } from '../../context/StateContext';
 import SearchBar from '../../components/SearchBar';
 import Head from 'next/head';
 import { cookie } from '@mui/icons-material';
-import { Footer, Navbar } from '../../components';
+import { BackBar, Footer, Navbar } from '../../components';
 
 const ProductDetails = ({ product, products }) => {
-  const { image, name, details, price } = product;
+  const { image, name, details, price, pricedis, diskon } = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
@@ -28,9 +28,8 @@ const ProductDetails = ({ product, products }) => {
       <Head>
         <title>{name}-USP-Store</title>
       </Head>
-      <Navbar />
-      <SearchBar products={products} />
-      <div className=" md:flex text-gray-900 md:p-10 lg:p-20">
+      <BackBar />
+      <div className=" md:flex text-gray-900 md:p-10 lg:p-20 mt-10">
         <div className="md:w-1/2 lg:w-2/5 flex items-center justify-center p-5 md:p-0 relative">
           {/* <div className="absolute top-6 right-6  bg-red-500 p-2 text-gray-50 rounded-tr-xl rounded-br-xl text-xl font-bold italic ">
             <p>Off 10%</p>
@@ -70,7 +69,17 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <h4 className="font-bold text-xl">Details: </h4>
           <p className="text-sm">{details}</p>
-          <p className=" font-bold text-2xl text-red-500">Rp {price}</p>
+          {!diskon ? (
+            <p className="   font-bold text-2xl text-red-500">Rp {price}</p>
+          ) : (
+            <div>
+              <p className=" font-bold text-lg line-through decoration-2 decoration-red-500 text-black">
+                Rp {price}
+              </p>
+              <p className=" font-bold text-2xl text-red-500">Rp {pricedis}</p>
+            </div>
+          )}
+
           <div className=" flex space-x-4 items-center">
             <h3 className="font-bold text-xl">Quantity:</h3>
             <p className=" flex space-x-4 items-center ">

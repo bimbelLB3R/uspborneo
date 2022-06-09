@@ -21,7 +21,7 @@ const Services = ({ products, kategori }) => {
   function getFilteredList() {
     // Avoid filter when selectedCategory is null
     if (!selectedCategory) {
-      return listProduct;
+      return listProduct.filter((item) => !item.diskon);
     }
     return listProduct.filter((item) => item.kategori === selectedCategory);
   }

@@ -5,6 +5,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import LoginForm from './LoginForm';
+import { toast } from 'react-hot-toast';
 
 import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
