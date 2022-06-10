@@ -5,7 +5,9 @@ import { urlFor } from '../lib/client';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
-const Product = ({ product: { image, name, slug, price, diskon } }) => {
+const Product = ({
+  product: { image, name, slug, price, pricedis, diskon },
+}) => {
   const { data: session } = useSession();
   const router = useRouter();
   // const toLogin = () => {
@@ -41,7 +43,16 @@ const Product = ({ product: { image, name, slug, price, diskon } }) => {
             className="product-image object-fit p-4"
           />
           <p className="product-name font-semibold">{name}</p>
-          <p className="product-price">Rp {price}</p>
+          {!diskon ? (
+            <p className="   font-bold text-2xl text-red-500">Rp {price}</p>
+          ) : (
+            <div>
+              <p className=" font-bold text-lg line-through decoration-2 decoration-red-500 text-black">
+                Rp {price}
+              </p>
+              <p className=" font-bold text-2xl text-red-500">Rp {pricedis}</p>
+            </div>
+          )}
         </div>
       </button>
     );
@@ -56,7 +67,16 @@ const Product = ({ product: { image, name, slug, price, diskon } }) => {
             className="product-image object-fit p-4"
           />
           <p className="product-name font-semibold">{name}</p>
-          <p className="product-price">Rp {price}</p>
+          {!diskon ? (
+            <p className="   font-bold text-2xl text-red-500">Rp {price}</p>
+          ) : (
+            <div>
+              <p className=" font-bold text-lg line-through decoration-2 decoration-red-500 text-black">
+                Rp {price}
+              </p>
+              <p className=" font-bold text-2xl text-red-500">Rp {pricedis}</p>
+            </div>
+          )}
         </div>
       </Link>
     );

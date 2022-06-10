@@ -18,8 +18,8 @@ const PromoCard = ({
   const { data: session } = useSession();
   return (
     <>
-      <div className="flex items-center md:justify-center ">
-        <div className=" bg-white w-[200px] h-[300px] text-[12px] rounded-xl">
+      <div className="flex items-center md:justify-center shadow-xl">
+        <div className=" bg-white w-[200px] h-[300px] text-[12px] rounded-xl shadow-xl">
           <div className="flex items-center justify-center p-2 rounded-xl">
             <img
               src={urlFor(image[0])}
