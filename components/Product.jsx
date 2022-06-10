@@ -24,8 +24,8 @@ const Product = ({ product: { image, name, slug, price, diskon } }) => {
             height={250}
             className="product-image object-fit p-4"
           />
-          <span className="product-name font-semibold">{name}</span>
-          <span className="product-price">Rp {price}</span>
+          <p className="product-name font-semibold">{name}</p>
+          <p className="product-price">Rp {price}</p>
         </div>
       </Link>
     );

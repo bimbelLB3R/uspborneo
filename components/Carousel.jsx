@@ -11,15 +11,16 @@ import Link from 'next/link';
 const dataSlider = [
   {
     id: 1,
-    url: 'https://images.unsplash.com/photo-1558705232-4e2c245163e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687',
+    url: 'https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072',
   },
+
   {
     id: 2,
     url: 'https://images.unsplash.com/photo-1622351772377-c3dda74beb03?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=948',
   },
   {
     id: 3,
-    url: 'https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072',
+    url: 'https://images.unsplash.com/photo-1558705232-4e2c245163e5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687',
   },
   {
     id: 4,
@@ -37,8 +38,8 @@ const Carousel = () => {
     setSlide(slide === 0 ? length - 1 : slide - 1);
   };
   return (
-    <div className="z-50 w-full h-screen mx-auto   flex justify-center items-center relative">
-      <div className="absolute z-50 top-4 text-gray-50 flex items-center space-x-6">
+    <div className=" w-full h-screen mx-auto   flex justify-center items-center relative">
+      <div className="absolute z-40 top-4 text-gray-50 flex items-center space-x-6">
         <Link href="https://wa.me/+6281392552459">
           <WhatsAppIcon
             sx={{ fontSize: 60 }}
@@ -81,11 +82,11 @@ const Carousel = () => {
               />
               <BsArrowLeftSquare
                 onClick={prevSlide}
-                className="absolute top-[50%] text-5xl text-fuchsia-600/50 cursor-pointer left-10 z-50"
+                className="absolute top-[25%] text-5xl text-fuchsia-600/50 cursor-pointer left-10 z-50"
               />
               <BsArrowRightSquare
                 onClick={nextSlide}
-                className="absolute top-[50%] text-5xl text-fuchsia-600/50 cursor-pointer right-10 z-50"
+                className="absolute top-[25%] text-5xl text-fuchsia-600/50 cursor-pointer right-10 z-50"
               />
             </div>
           )}

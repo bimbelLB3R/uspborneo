@@ -12,6 +12,9 @@ import SearchBar from '../../components/SearchBar';
 import Head from 'next/head';
 import { cookie } from '@mui/icons-material';
 import { BackBar, Footer, Navbar } from '../../components';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price, pricedis, diskon } = product;
@@ -66,6 +69,12 @@ const ProductDetails = ({ product, products }) => {
               <AiOutlineStar />
             </div>
             <p>(20)</p>
+          </div>
+          <div className="flex space-x-2">
+            <p>Contact Seller :</p>
+            <WhatsAppIcon />
+            <InstagramIcon />
+            <MailOutlineIcon />
           </div>
           <h4 className="font-bold text-xl">Details: </h4>
           <p className="text-sm">{details}</p>

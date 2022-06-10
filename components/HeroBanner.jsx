@@ -3,16 +3,21 @@ import Link from 'next/link';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import PromoCard from './PromoCard';
 import { urlFor } from '../lib/client';
+import { Promo } from '.';
 
 const HeroBanner = ({ products }) => {
   const { data: session } = useSession();
   const diskProducts = products.filter((product) => product.diskon > 0);
   console.log(diskProducts);
   return (
-    <div>
-      {diskProducts.map((diskProduct) => (
-        <PromoCard key={diskProduct._id} diskProduct={diskProduct} />
-      ))}
+    <div className="flex items-center justify-center">
+      <div className="flex justify-center overflow-x-scroll space-x-3 -mt-96 z-50 absolute left-0 right-0 ">
+        {diskProducts.map((diskProduct) => (
+          <>
+            <PromoCard key={diskProduct._id} diskProduct={diskProduct} />
+          </>
+        ))}
+      </div>
     </div>
   );
 };

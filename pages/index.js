@@ -1,5 +1,14 @@
 import Head from 'next/head';
-import { Footer, HeroBanner, Layout, Navbar } from '../components';
+import {
+  Footer,
+  HeroBanner,
+  HeroBanner2,
+  Layout,
+  Carousel,
+  Navbar,
+  Promo,
+  SlideKategori,
+} from '../components';
 import { FooterBanner } from '../components';
 import SearchBar from '../components/SearchBar';
 import { app, db } from '../firebase';
@@ -36,12 +45,13 @@ export default function Home({ products, kategori }) {
       </Head>
 
       <Navbar />
+      <SlideKategori kategoris={kategori} />
       <SearchBar
         products={products}
         kategori={kategori}
         placeholder="cari nama produk"
       />
-
+      <Carousel />
       <HeroBanner products={products} />
 
       {/* <Intro /> */}

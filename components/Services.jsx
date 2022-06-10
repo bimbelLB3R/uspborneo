@@ -37,7 +37,7 @@ const Services = ({ products, kategori }) => {
         <div className="  font-bold text-3xl mb-10 ml-4 md:ml-20 mt-10 flex items-center justify-center">
           <p className="border-b-4  border-green-400">Our Products</p>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center  overflow-x-auto mx-auto md:justify-center ">
           <ToggleButtonGroup
             exclusive
             color="success"

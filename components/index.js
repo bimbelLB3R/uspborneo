@@ -1,11 +1,15 @@
 export { default as Footer } from './Footer';
+export { default as Carousel } from './Carousel';
 export { default as Layout } from './Layout';
 export { default as Navbar } from './Navbar';
 export { default as Product } from './Product';
 export { default as Cart } from './Cart';
 export { default as HeroBanner } from './HeroBanner';
+// export { default as HeroBanner2 } from './HeroBanner2';
 export { default as SearchBar } from './SearchBar';
 export { default as LoginForm } from './LoginForm';
 export { default as BackBar } from './BackBar';
+export { default as Promo } from './PromoCard';
 export { default as PromoCard } from './PromoCard';
 export { default as Keranjang } from './Keranjang';
+export { default as SlideKategori } from './SlideKategori';
