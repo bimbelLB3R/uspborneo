@@ -22,12 +22,13 @@ export default async function handler(req, res) {
 
           return {
             price_data: {
-              currency: 'MYR',
+              currency: 'IDR',
               product_data: {
                 name: item.name,
                 images: [newImage],
               },
-              unit_amount: item.price * 100,
+
+              unit_amount: item.diskon ? item.pricedis * 100 : item.price * 100,
             },
             adjustable_quantity: {
               enabled: true,

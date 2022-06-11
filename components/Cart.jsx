@@ -89,8 +89,21 @@ const Cart = () => {
 
                   <div className=" w-full">
                     <div className="w-full flex items-center px-8 justify-between  text-2xl capitalize ">
-                      <h5 className="text-3xl">{item.name}</h5>
-                      <h4>Rp {item.price}</h4>
+                      {item.diskon ? (
+                        <h5 className="text-3xl">
+                          {item.name}
+                          <span className="text-[12px] text-red-600">
+                            (Off {item.diskon}%)
+                          </span>
+                        </h5>
+                      ) : (
+                        <h5 className="text-3xl">{item.name}</h5>
+                      )}
+                      {item.diskon ? (
+                        <h4>Rp {item.pricedis * item.quantity}</h4>
+                      ) : (
+                        <h4>Rp {item.price * item.quantity}</h4>
+                      )}
                     </div>
                     <div className="flex justify-between p-6 space-x-6">
                       <div className="flex space-x-6 items-center">
