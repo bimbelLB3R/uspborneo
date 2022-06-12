@@ -13,3 +13,4 @@ export { default as Promo } from './PromoCard';
 export { default as PromoCard } from './PromoCard';
 export { default as Keranjang } from './Keranjang';
 export { default as SlideKategori } from './SlideKategori';
+export { default as Bintang } from './Bintang';

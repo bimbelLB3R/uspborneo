@@ -15,6 +15,8 @@ import { BackBar, Footer, Navbar } from '../../components';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { Rating } from '@mui/material';
+import Bintang from '../../components/Bintang';
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price, pricedis, diskon } = product;
@@ -118,6 +120,11 @@ const ProductDetails = ({ product, products }) => {
               onClick={handleBuyNow}>
               Buy Now
             </button>
+          </div>
+          <div className="flex items-center justify-center">
+            <p>Rate this product : </p>
+            {/* <Rating /> */}
+            <Bintang className="star" />
           </div>
         </div>
       </div>
