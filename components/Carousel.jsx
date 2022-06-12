@@ -85,13 +85,13 @@ const Carousel = () => {
 
               <div
                 onClick={prevSlide}
-                className="flex items-center h-[150px] w-[50px] bg-fuchsia-600/10 z-50 absolute top-0 left-0">
-                <ArrowBackIosIcon className=" text-5xl text-fuchsia-600/50" />
+                className="flex items-center justify-center h-[150px] w-[50px] bg-fuchsia-600/10 z-50 absolute top-0 left-0 cursor-pointer hover:shadow-lg">
+                <ArrowBackIosIcon className="  text-fuchsia-600/50 text-5xl" />
               </div>
 
               <div
                 onClick={nextSlide}
-                className="flex items-center h-[150px] w-[50px] bg-fuchsia-600/10 z-50 absolute top-0 right-0">
+                className="flex items-center justify-center h-[150px] w-[50px] bg-fuchsia-600/10 z-50 absolute top-0 right-0 cursor-pointer hover:shadow-lg">
                 <ArrowForwardIosIcon className=" text-5xl text-fuchsia-600/50" />
               </div>
             </div>
