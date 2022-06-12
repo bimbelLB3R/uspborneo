@@ -7,6 +7,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Link from 'next/link';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const dataSlider = [
   {
@@ -80,14 +82,18 @@ const Carousel = () => {
                 objectFit="cover"
                 layout="fill"
               />
-              <BsArrowLeftSquare
+
+              <div
                 onClick={prevSlide}
-                className="absolute top-[25%] text-5xl text-fuchsia-600/50 cursor-pointer left-10 z-50"
-              />
-              <BsArrowRightSquare
+                className="flex items-center h-[150px] w-[50px] bg-fuchsia-600/10 z-50 absolute top-0 left-0">
+                <ArrowBackIosIcon className=" text-5xl text-fuchsia-600/50" />
+              </div>
+
+              <div
                 onClick={nextSlide}
-                className="absolute top-[25%] text-5xl text-fuchsia-600/50 cursor-pointer right-10 z-50"
-              />
+                className="flex items-center h-[150px] w-[50px] bg-fuchsia-600/10 z-50 absolute top-0 right-0">
+                <ArrowForwardIosIcon className=" text-5xl text-fuchsia-600/50" />
+              </div>
             </div>
           )}
         </div>

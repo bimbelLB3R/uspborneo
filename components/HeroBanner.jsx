@@ -11,7 +11,7 @@ const HeroBanner = ({ products }) => {
   console.log(diskProducts);
   return (
     <div className="flex items-center justify-center">
-      <div className="flex md:justify-center overflow-x-scroll space-x-3 -mt-96 z-50 absolute left-0 right-0 ">
+      <div className="flex md:justify-center overflow-x-scroll space-x-3 top-[400px] md:top-[300px] z-50 absolute left-0 right-0 ">
         {diskProducts.map((diskProduct) => (
           <>
             <PromoCard key={diskProduct._id} diskProduct={diskProduct} />

@@ -83,32 +83,36 @@ const Cart = () => {
             {cartItems.length >= 1 &&
               cartItems.map((item) => (
                 <div className="w-full  flex mb-4 shadow hover:shadow-lg ">
-                  <div className="w-[150px] p-2">
+                  <div className="w-[100px] p-2">
                     <img src={urlFor(item?.image[0])} className="object-fit" />
                   </div>
 
                   <div className=" w-full">
                     <div className="w-full flex items-center px-8 justify-between text-xs capitalize ">
                       {item.diskon ? (
-                        <h5 className="">
+                        <p className="text-xs md:text-lg">
                           {item.name}
-                          <span className=" text-red-600">
+                          <span className=" text-red-600 text-xs mt-2">
                             (Off {item.diskon}%)
                           </span>
-                        </h5>
+                        </p>
                       ) : (
-                        <h5 className="">{item.name}</h5>
+                        <p className="text-xs md:text-lg">{item.name}</p>
                       )}
                       {item.diskon ? (
-                        <h4 className="">Rp {item.pricedis * item.quantity}</h4>
+                        <p className="text-xs md:text-lg">
+                          Rp {item.pricedis * item.quantity}
+                        </p>
                       ) : (
-                        <h4 className="">Rp {item.price * item.quantity}</h4>
+                        <p className="text-xs md:text-lg">
+                          Rp {item.price * item.quantity}
+                        </p>
                       )}
                     </div>
-                    <div className="flex justify-between p-6 space-x-6">
+                    <div className="flex justify-between px-8 space-x-6">
                       <div className="flex space-x-6 items-center">
                         <span
-                          className="border-2 border-green-700 p-1 cursor-pointer"
+                          className="border-2 border-green-700  cursor-pointer"
                           onClick={() =>
                             toggleCartItemQuanitity(item._id, 'dec')
                           }>
@@ -118,7 +122,7 @@ const Cart = () => {
                           {item.quantity}
                         </span>
                         <span
-                          className="border-2 border-green-700 p-1 hover:cursor-pointer"
+                          className="border-2 border-green-700 hover:cursor-pointer"
                           onClick={() =>
                             toggleCartItemQuanitity(item._id, 'inc')
                           }>
@@ -145,7 +149,7 @@ const Cart = () => {
               <h3>Rp {totalPrice}</h3>
             </div>
             <div className="flex justify-center px-10 mb-10">
-              <div className="bg-red-500 rounded-full px-4 py-2 text-gray-50">
+              <div className="bg-red-500 rounded-full px-6 py-2 text-gray-50">
                 {/* <Link
                   href={
                     'https://wa.me/+6281392552459?text=Kirim Kode Pesanan Anda ke Admin: ' +
