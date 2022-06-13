@@ -98,8 +98,12 @@ const Navbar = () => {
                       <ShoppingBagOutlinedIcon />
                       My order history
                     </div>
-                    <div className="hover:bg-slate-300 p-1 cursor-pointer">
-                      <PersonOutlineIcon />
+                    <div className="hover:bg-slate-300 p-1 cursor-pointer flex">
+                      <img
+                        src={session?.user?.image}
+                        alt="user"
+                        className="rounded-full w-5 h-5 ml-1 bg-none hover:cursor-pointer"
+                      />
                       My profile
                     </div>
                     <div
