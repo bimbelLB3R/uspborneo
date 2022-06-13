@@ -6,11 +6,13 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import LoginForm from './LoginForm';
 import { toast } from 'react-hot-toast';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
 import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
 import SearchBar from './SearchBar';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
@@ -69,14 +71,45 @@ const Navbar = () => {
                 </div> */}
               </>
             ) : (
-              <div className="flex items-center text-xs">
+              <div
+                onClick={handleNav}
+                className="flex items-center text-xs relative">
                 {session?.user?.name}
                 <img
-                  onClick={signOut}
                   src={session?.user?.image}
                   alt="user"
                   className="rounded-full w-5 h-5 ml-1 bg-none hover:cursor-pointer"
                 />
+                {nav ? (
+                  <>
+                    <ArrowDropDownIcon className="" />
+                  </>
+                ) : (
+                  <ArrowRightIcon className="" />
+                )}
+                <div
+                  className={
+                    nav
+                      ? 'visible  bg-gray-100   h-[100px] w-[150px] absolute top-[90%] right-[5%] z-[100]  shadow-2xl rounded-b-xl rounded-tl-xl '
+                      : 'hidden'
+                  }>
+                  <div className="text-gray-900">
+                    <div className="hover:bg-slate-300 rounded-tl-xl p-1 cursor-pointer">
+                      <ShoppingBagOutlinedIcon />
+                      My order history
+                    </div>
+                    <div className="hover:bg-slate-300 p-1 cursor-pointer">
+                      <PersonOutlineIcon />
+                      My profile
+                    </div>
+                    <div
+                      onClick={signOut}
+                      className="hover:bg-slate-300 rounded-b-xl p-1 cursor-pointer">
+                      <LogoutIcon />
+                      Logout
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
