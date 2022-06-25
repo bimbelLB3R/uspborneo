@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import {
   AiOutlineMinus,
@@ -23,11 +23,16 @@ const Cart = () => {
     totalPrice,
     totalQuantities,
     cartItems,
+    // cartItems2,
     setShowCart,
     toggleCartItemQuanitity,
     onRemove,
   } = useStateContext();
-
+  /*
+  const [cartItems, setCartItems] = useState(cartItems2);
+  {
+    console.log(cartItems);
+  }*/
   const handleCheckout = async () => {
     const stripe = await getStripe();
 
@@ -76,7 +81,7 @@ const Cart = () => {
             </div>
           </div>
         )}
-
+        {/* {console.log(cartItems)} */}
         {/* edit cart */}
         <div className="overscroll-contain overflow-scroll h-[70vh] px-8">
           <div>

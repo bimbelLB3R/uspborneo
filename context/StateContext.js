@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import cookie from 'js-cookie';
+// import cookie from 'js-cookie';
 
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  // const [cartItems2, setCartItems2] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
@@ -124,6 +125,24 @@ export const StateContext = ({ children }) => {
       return prevQty - 1;
     });
   };
+  /*
+  // useEffect(() => {
+  //   const cartData = JSON.parse(localStorage.getItem('MY_APP_STATE'));
+  //   if (cartData) {
+  //     setCartItems(cartData);
+  //   }
+  // }, []);
+  useEffect(() => {
+    const data = window.localStorage.getItem('MY_APP_STATE');
+    const datas = JSON.parse(data);
+    if (datas !== null) setCartItems2(datas);
+    // console.log(datas);
+  }, []);
+  // console.log(cartItems2);
+
+  useEffect(() => {
+    window.localStorage.setItem('MY_APP_STATE', JSON.stringify(cartItems));
+  }, [cartItems]); */
 
   return (
     <Context.Provider
@@ -131,6 +150,7 @@ export const StateContext = ({ children }) => {
         showCart,
         setShowCart,
         cartItems,
+        // cartItems2,
         totalPrice,
         totalQuantities,
         qty,
