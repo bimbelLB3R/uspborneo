@@ -39,7 +39,7 @@ const ProductDetails = ({ product, products }) => {
         <meta
           property="og:image"
           itemProp="image"
-          content={urlFor(image && image[index])}
+          content={urlFor(image && image[0])}
         />
       </Head>
       <BackBar />
