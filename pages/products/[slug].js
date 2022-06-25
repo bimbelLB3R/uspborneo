@@ -32,6 +32,15 @@ const ProductDetails = ({ product, products }) => {
     <div>
       <Head>
         <title>{name}-USP-Store</title>
+        <meta name="description" content={details} />
+        <meta property="og:title" content={name} />
+        <meta property="og:url" content="https://uspborneo.vercel.app" />
+        <meta property="og:description" content={details} />
+        <meta
+          property="og:image"
+          itemProp="image"
+          content={urlFor(image && image[index])}
+        />
       </Head>
       <BackBar />
       <div className=" md:flex text-gray-900 md:p-10 lg:p-20 mt-10">
